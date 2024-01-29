@@ -1,4 +1,4 @@
-import { faker } from '@faker-js/faker';
+// import { faker } from '@faker-js/faker';
 
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Unstable_Grid2';
@@ -6,16 +6,16 @@ import { Box, Button, Input } from '@mui/material';
 
 import Typography from '@mui/material/Typography';
 
-import Iconify from 'src/components/iconify';
+// import Iconify from 'src/components/iconify';
 
-import AppTasks from '../app-tasks';
-import AppNewsUpdate from '../app-news-update';
-import AppOrderTimeline from '../app-order-timeline';
+// import AppTasks from '../app-tasks';
+// import AppNewsUpdate from '../app-news-update';
+// import AppOrderTimeline from '../app-order-timeline';
 import AppCurrentVisits from '../app-current-visits';
 import AppWebsiteVisits from '../app-website-visits';
 import AppWidgetSummary from '../app-widget-summary';
-import AppTrafficBySite from '../app-traffic-by-site';
-import AppCurrentSubject from '../app-current-subject';
+// import AppTrafficBySite from '../app-traffic-by-site';
+// import AppCurrentSubject from '../app-current-subject';
 import AppConversionRates from '../app-conversion-rates';
 
 
@@ -121,23 +121,18 @@ export default function AppView() {
               ],
               series: [
                 {
-                  name: 'Team A',
+                  name: 'Open tickets',
                   type: 'column',
-                  fill: 'solid',
+                  fill: 'gradient',
                   data: [23, 11, 22, 27, 13, 22],
                 },
                 {
-                  name: 'Team B',
-                  type: 'area',
+                  name: 'Close tickets',
+                  type: 'column',
                   fill: 'gradient',
                   data: [44, 55, 41, 67, 22, 43],
                 },
-                {
-                  name: 'Team C',
-                  type: 'line',
-                  fill: 'solid',
-                  data: [30, 25, 36, 30, 45, 35],
-                },
+                
               ],
             }}
           />
@@ -145,28 +140,52 @@ export default function AppView() {
 
         
 
-        <Grid xs={12} md={6} lg={8}>
+        <Grid xs={12} md={6} lg={6}>
           <AppConversionRates
-            title="Conversion Rates"
-            subheader="(+43%) than last year"
+            title="Long Pending Tickets"
+            subheader="Categories"
             chart={{
               series: [
-                { label: 'Italy', value: 400 },
-                { label: 'Japan', value: 430 },
-                { label: 'China', value: 448 },
-                { label: 'Canada', value: 470 },
-                { label: 'France', value: 540 },
-                { label: 'Germany', value: 580 },
-                { label: 'South Korea', value: 690 },
-                { label: 'Netherlands', value: 1100 },
-                { label: 'United States', value: 1200 },
-                { label: 'United Kingdom', value: 1380 },
+                { label: 'Recharge Related', value: 350 },
+                { label: 'Voltage Related', value: 300 },
+                { label: 'Fuse Related', value: 220 },
+                { label: 'Transformer Related', value: 200 },
+                { label: 'Shutdown Related', value: 120 },
+                { label: 'Load Related', value: 30 },
+                { label: 'Query BPDB Related', value: 7 },
+              ],
+            }}
+          />
+        </Grid>
+        <Grid xs={12} md={6} lg={6}>
+          <AppWebsiteVisits
+            title="Utility Wise Long Pending Opened Tickets"
+            
+            chart={{
+              labels: [
+                'BPDB',
+                'BREB',
+                'DESCO',
+                'DPDC',
+                'WZPDCL',
+                'NESCO',
+                
+              ],
+              series: [
+                {
+                  name: 'Tickets Count',
+                  type: 'area',
+                  fill: 'gradient',
+                  data: [230, 110, 220, 270, 130, 290],
+                },
+               
+                
               ],
             }}
           />
         </Grid>
 
-        <Grid xs={12} md={6} lg={4}>
+        {/* <Grid xs={12} md={6} lg={4}>
           <AppCurrentSubject
             title="Current Subject"
             chart={{
@@ -178,9 +197,9 @@ export default function AppView() {
               ],
             }}
           />
-        </Grid>
+        </Grid> */}
 
-        <Grid xs={12} md={6} lg={8}>
+        {/* <Grid xs={12} md={6} lg={8}>
           <AppNewsUpdate
             title="News Update"
             list={[...Array(5)].map((_, index) => ({
@@ -191,9 +210,9 @@ export default function AppView() {
               postedAt: faker.date.recent(),
             }))}
           />
-        </Grid>
+        </Grid> */}
 
-        <Grid xs={12} md={6} lg={4}>
+        {/* <Grid xs={12} md={6} lg={4}>
           <AppOrderTimeline
             title="Order Timeline"
             list={[...Array(5)].map((_, index) => ({
@@ -250,7 +269,7 @@ export default function AppView() {
               { id: '5', name: 'Sprint Showcase' },
             ]}
           />
-        </Grid>
+        </Grid> */}
       </Grid>
     </Container>
   );

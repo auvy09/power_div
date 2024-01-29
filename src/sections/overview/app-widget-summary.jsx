@@ -39,7 +39,7 @@ export default function AppWidgetSummary({ title, total, icon,time ,color = 'pri
       
     </Card>
     <Box sx={{
-        
+        mb:3,
        borderBottomRightRadius:2,
        borderBottomLeftRadius:2,
         ...sx,
