@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import Drawer from '@mui/material/Drawer';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import { alpha } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
@@ -50,10 +50,10 @@ export default function Nav({ openNav, onCloseNav }) {
         bgcolor: (theme) => alpha(theme.palette.grey[500], 0.12),
       }}
     >
-      {/* <Avatar src={account.photoURL} alt="photoURL" /> */}
+      <Avatar src={account.photoURL} alt="photoURL" />
 
       <Box sx={{ mt:3, ml: 2 }}>
-        {/* <Typography variant="subtitle2">{account.displayName}</Typography> */}
+        <Typography variant="subtitle2">{account.displayName}</Typography>
 
         <Typography variant="body2" sx={{ color: 'text.secondary' }}>
           {account.role}
@@ -110,7 +110,7 @@ export default function Nav({ openNav, onCloseNav }) {
         },
       }}
     >
-      <Logo sx={{ mt: 3, ml: 4 }} />
+      <Logo sx={{ mt: 3, ml: 4 ,mb:7}} />
 
       {renderAccount}
 
@@ -146,7 +146,7 @@ export default function Nav({ openNav, onCloseNav }) {
           onClose={onCloseNav}
           PaperProps={{
             sx: {
-              width: NAV.WIDTH,
+              width: NAV.WIDTH+100,
             },
           }}
         >
